@@ -224,19 +224,19 @@ public class QuizActivity extends AppCompatActivity {
         switch (currentQuestion.getAnswerNr()) {
             case 1:
                 rb1.setTextColor(Color.GREEN);
-                textViewQuestion.setText("Answer 1 is correct");
+                textViewQuestion.setText("A resposta 1 está correta");
                 break;
             case 2:
                 rb2.setTextColor(Color.GREEN);
-                textViewQuestion.setText("Answer 2 is correct");
+                textViewQuestion.setText("A resposta 2 está correta");
                 break;
             case 3:
                 rb3.setTextColor(Color.GREEN);
-                textViewQuestion.setText("Answer 3 is correct");
+                textViewQuestion.setText("A resposta 3 está correta");
                 break;
             case 4:
                 rb4.setTextColor(Color.GREEN);
-                textViewQuestion.setText("Answer 4 is correct");
+                textViewQuestion.setText("A resposta 4 está correta");
                 break;
         }
 

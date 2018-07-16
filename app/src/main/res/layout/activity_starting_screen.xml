@@ -46,4 +46,17 @@
         android:layout_marginTop="12dp"
         app:srcCompat="@drawable/idecanquiz" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imageView"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:clickable="true"
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:srcCompat="@drawable/ic_share"
+        tools:ignore="VectorDrawableCompat"
+        android:layout_alignRight="@+id/imageView" />
+
 </RelativeLayout>

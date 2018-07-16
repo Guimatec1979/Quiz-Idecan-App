@@ -2,6 +2,7 @@ package com.guimatec.idecanquiz;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,14 +30,34 @@ public class StartingScreenActivity extends AppCompatActivity {
 
     private InterstitialAd mInterstitialAd;
 
+    private FloatingActionButton fb;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_starting_screen);
 
+
+        fb = findViewById(R.id.floatingActionButton);
+        fb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent myIntent = new Intent(android.content.Intent.ACTION_SEND);
+                myIntent.setType("text/plain");
+                String shareBody = "www.guimatec.com";
+                String shareSub = "Your Subject here";
+                myIntent.putExtra(android.content.Intent.EXTRA_TEXT,shareBody);
+                myIntent.putExtra(android.content.Intent.EXTRA_SUBJECT,shareSub);
+                startActivity(Intent.createChooser(myIntent,"Compartilhar via"));
+
+            }
+        });
+
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        //mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-4998370108053217/2850999013");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
         mInterstitialAd.setAdListener(new AdListener(){
             @Override
